@@ -1,0 +1,32 @@
+
+<div *ngIf="!router.url.includes('ToDos')" class="container">
+            
+  <table class="table">
+    <thead>
+      <tr>
+        <th>Firstname</th>
+        <th>Email</th>
+        <th>website</th>
+        <th>action</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let data of profile">
+        <td>{{data.name}}</td>
+        <td>{{data.email}}</td>
+        <td>{{data.website}}</td>
+        <td><button class="btn btn-info" (click)="viewTodoList(data.id)">ToDo</button></td>
+      </tr>
+     
+      
+    </tbody>
+  </table> 
+</div>
+
+<router-outlet>
+	
+
+</router-outlet>
+<!-- <div *ngIf="router.url.includes('ToDos')">
+	<app-to-do [toDoList]="ToDo"></app-to-do>
+</div> -->

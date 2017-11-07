@@ -1,0 +1,35 @@
+
+<style>
+
+.toDoView{
+	margin-left: 17%;
+    max-height: 500px;
+    overflow-y: auto;
+}
+.strikethrough{
+	
+	text-decoration:line-through;
+}
+</style>
+<div class="col-sm-12">
+<h1>ToDo List</h1>
+<div class="form-group col-sm-6">
+     <div class="col-sm-10">    
+    	<input type="text" name="title" [(ngModel)]="addToDo.title" class="form-control" id="title">
+    </div>
+    <button style="float: right;" type="button"  (click)="addNewToDoTask()" class="btn btn-default btn-sm">
+         Add new
+        </button>
+  </div>
+	<div class="col-sm-8 toDoView">
+		<ul class="list-group" >
+		  <li  *ngFor="let data of ToDo;let i = index" class="list-group-item list-group-item-success">
+		  <label class="checkbox-inline"><input type="checkbox" [checked]="data.completed" (change)="handleCompleteStatus($event,data)"></label>
+		  <span [ngClass]="{'strikethrough': data.completed== true}">{{data.title}}</span>
+		  <button style="float: right;" type="button" (click)="removeToDo(i)" class="btn btn-default btn-sm">
+          <span class="glyphicon glyphicon-remove"></span> Remove 
+        </button></li>
+		  
+		</ul>
+	</div>
+</div>
