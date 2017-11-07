@@ -1,33 +1,4 @@
 
-<style>
-	.toDoView{
-		margin-left: 17%;
-	    max-height: 500px;
-	    overflow-y: auto;
-	}
-	.strikethrough{
-		
-		text-decoration:line-through;
-		text-decoration-color:black;
-		text-decoration-style: double;
-	}
-
-	.list-group-item-success {
-	    color: #2f402f;
-	    background-color: #96955B;
-	}
-
-	.list-group-item {    
-	    border: 3px solid #ddd;
-	}
-
-	.navbar-inverse {
-       background-color: #e0e0ab;
-       border-color: #0ebf34;
-    }
-</style>
-
-
 <nav class="navbar navbar-inverse">
   <div class="container-fluid">
     <div class="navbar-header">
@@ -36,23 +7,30 @@
     
   </div>
 </nav>
+
 <div class="col-sm-12">
-<div style="margin-left: 16%;" class="form-group col-sm-6">
-     <div class="col-sm-10">    
-    	<input type="text" name="title" [(ngModel)]="addToDo.title" class="form-control" id="title">
+	<div style="margin-left: 16%;" class="form-group col-sm-6">
+     	<div class="col-sm-10">    
+    		<input type="text" name="title" [(ngModel)]="addToDo.title" class="form-control" id="title">
+    	</div>
+    		<button style="float: right;" type="button"  (click)="addNewToDoTask()" class="btn btn-default btn-sm btn-success">
+         	Add new ToDo
+        	</button>
     </div>
-    <button style="float: right;" type="button"  (click)="addNewToDoTask()" class="btn btn-default btn-sm btn-success">
-         Add new ToDo
-        </button>
-  </div>
+
 	<div class="col-sm-8 toDoView">
 		<ul class="list-group" >
 		  <li  *ngFor="let data of ToDo;let i = index" class="list-group-item list-group-item-success">
-		  <label class="checkbox-inline"><input type="checkbox" [checked]="data.completed" (change)="handleCompleteStatus($event,data)"></label>
-		  <span style="color: khaki;" [ngClass]="{'strikethrough': data.completed== true}">{{data.title}}</span>
-		  <button style="float: right;background-color: #ebdaf9;" type="button" (click)="removeToDo(i)" class="btn btn-default btn-sm">
-          <span class="glyphicon glyphicon-remove"></span> Remove 
-        </button></li>
+			  <label class="checkbox-inline">
+			  		<input type="checkbox" [checked]="data.completed" (change)="handleCompleteStatus($event,data)">
+			  </label>
+			  		<span style="color: khaki;" [ngClass]="{'strikethrough': data.completed== true}">
+			  			{{data.title}}
+			  		</span>
+			  			<button style="float: right;background-color: #ebdaf9;" type="button" (click)="removeToDo(i)" class="btn btn-default btn-sm">
+	          				<span class="glyphicon glyphicon-remove"></span> Remove 
+	        			</button>
+        </li>
 		  
 		</ul>
 	</div>

@@ -14,9 +14,8 @@ import {ToDoComponent} from './to-do/to-do.component';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title1 = 'app worksaaaa!';
+  
   profile: Array<any>;
-  ToDo :Array<any>;
   
  
  constructor(private http: Http,private router: Router) {    
@@ -32,12 +31,11 @@ export class AppComponent {
 	        });
 	}
 
-viewTodoList(id) {
-        this.router.navigateByUrl('ToDos');
-	   
-		console.log(id);
-		localStorage.setItem('userId',id);
-		
-}
+	viewTodoList(id) {
+	        this.router.navigateByUrl('ToDos');		   
+			console.log(id);
+			localStorage.setItem('userId',id);
+			
+	}
 }
 

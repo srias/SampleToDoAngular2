@@ -11,7 +11,7 @@ export class ToDoComponent implements OnInit {
 	 @Input() toDoList: Array<any> ;
 	 ToDo :Array<any>;
 	 addToDo: AddToDo = {title:''};
-  constructor(private http: Http) { }
+   constructor(private http: Http) { }
   
  
   ngOnInit() {
@@ -34,15 +34,15 @@ export class ToDoComponent implements OnInit {
   	var isCheckedValue = e.target.checked;
   	toDoData['completed'] = isCheckedValue;
   	console.log(toDoData);  	
-    this.http.put('https://jsonplaceholder.typicode.com/todos/1',toDoData)
+    //this.http.put('https://jsonplaceholder.typicode.com/todos/1',toDoData)
 	        
-	        .map((res: Response) => res.json())
-	        .subscribe(data => {
-	           console.log(data);          
+	    //    .map((res: Response) => res.json())
+	      //  .subscribe(data => {
+	        //   console.log(data);          
 	           
-	        }, error => {
-	           
-	        });
+	        //}, error => {
+	          // 
+	        //});
   }
 
   addNewToDoTask(){  		
