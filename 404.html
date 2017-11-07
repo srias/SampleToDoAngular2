@@ -10,11 +10,22 @@
    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  
+  <script>
+  // See http://www.backalleycoder.com/2016/05/13/sghpa-the-single-page-app-hack-for-github-pages/
+  (function(){
+    var redirect = sessionStorage.redirect;
+    delete sessionStorage.redirect;
+    if (redirect && redirect != location.href) {
+      history.replaceState(null, null, redirect);
+    }
+  })();
+</script>
 
 <link href="styles.d41d8cd98f00b204e980.bundle.css" rel="stylesheet"/></head>
 <body>
   <app-root>Loading...</app-root>
-<script type="text/javascript" src="inline.6c7cb992ca479311fc08.bundle.js"></script><script type="text/javascript" src="polyfills.e778b47519ae783e4427.bundle.js"></script><script type="text/javascript" src="main.a7dd78d6f2b059e6ac20.bundle.js"></script></body>
+<script type="text/javascript" src="inline.5c3005be8aa2c7f875fa.bundle.js"></script><script type="text/javascript" src="polyfills.799b525fae56d270bb22.bundle.js"></script><script type="text/javascript" src="main.9be2574dc19ad72654bf.bundle.js"></script></body>
 </html>
 
 
